@@ -1,0 +1,511 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5424DC2F2A13619F00B5A816 /* PolygonDebugAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5424DC2E2A13619F00B5A816 /* PolygonDebugAppApp.swift */; };
+		5424DC312A13619F00B5A816 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5424DC302A13619F00B5A816 /* ContentView.swift */; };
+		5424DC332A1361A100B5A816 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5424DC322A1361A100B5A816 /* Assets.xcassets */; };
+		5424DC372A1361A100B5A816 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5424DC362A1361A100B5A816 /* Preview Assets.xcassets */; };
+		54B16D4E2A136F5600863187 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B16D4D2A136F5600863187 /* ContentViewModel.swift */; };
+		54B16D542A136F9200863187 /* PinScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B16D532A136F9200863187 /* PinScene.swift */; };
+		54B16D562A136F9E00863187 /* PinSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B16D552A136F9E00863187 /* PinSceneView.swift */; };
+		54B16D582A136FAD00863187 /* IntersectScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B16D572A136FAD00863187 /* IntersectScene.swift */; };
+		54B16D5A2A136FB700863187 /* IntersectSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B16D592A136FB700863187 /* IntersectSceneView.swift */; };
+		54B16D5C2A1370D300863187 /* SceneContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B16D5B2A1370D300863187 /* SceneContainer.swift */; };
+		54B16D5F2A13757500863187 /* iDebug in Frameworks */ = {isa = PBXBuildFile; productRef = 54B16D5E2A13757500863187 /* iDebug */; };
+		54B16D612A13757500863187 /* iFixFloat in Frameworks */ = {isa = PBXBuildFile; productRef = 54B16D602A13757500863187 /* iFixFloat */; };
+		54B16D662A137A0E00863187 /* TestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B16D652A137A0E00863187 /* TestHandler.swift */; };
+		54B16D682A137D7C00863187 /* PinTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B16D672A137D7C00863187 /* PinTestStore.swift */; };
+		54B16D6A2A137EF300863187 /* IntersectTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B16D692A137EF300863187 /* IntersectTestStore.swift */; };
+		54B16D6C2A1383C200863187 /* PolygonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B16D6B2A1383C200863187 /* PolygonData.swift */; };
+		54D57CA72A14C9E900D33409 /* iConvex in Frameworks */ = {isa = PBXBuildFile; productRef = 54D57CA62A14C9E900D33409 /* iConvex */; };
+		54D57CA92A14D11C00D33409 /* PinDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D57CA82A14D11C00D33409 /* PinDot.swift */; };
+		54E0E1CA2A1629E000A329D3 /* AreaScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E0E1C92A1629E000A329D3 /* AreaScene.swift */; };
+		54E0E1CC2A1629EF00A329D3 /* AreaSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E0E1CB2A1629EF00A329D3 /* AreaSceneView.swift */; };
+		54E0E1CE2A162B6B00A329D3 /* AreaTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E0E1CD2A162B6B00A329D3 /* AreaTestStore.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5424DC2B2A13619F00B5A816 /* PolygonDebugApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PolygonDebugApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5424DC2E2A13619F00B5A816 /* PolygonDebugAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonDebugAppApp.swift; sourceTree = "<group>"; };
+		5424DC302A13619F00B5A816 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5424DC322A1361A100B5A816 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5424DC342A1361A100B5A816 /* PolygonDebugApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PolygonDebugApp.entitlements; sourceTree = "<group>"; };
+		5424DC362A1361A100B5A816 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		54B16D4A2A136E2D00863187 /* iFixFloat */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = iFixFloat; path = ../iFixFloat; sourceTree = "<group>"; };
+		54B16D4B2A136E3700863187 /* iDebug */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = iDebug; path = ../iDebug; sourceTree = "<group>"; };
+		54B16D4D2A136F5600863187 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		54B16D532A136F9200863187 /* PinScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinScene.swift; sourceTree = "<group>"; };
+		54B16D552A136F9E00863187 /* PinSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinSceneView.swift; sourceTree = "<group>"; };
+		54B16D572A136FAD00863187 /* IntersectScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntersectScene.swift; sourceTree = "<group>"; };
+		54B16D592A136FB700863187 /* IntersectSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntersectSceneView.swift; sourceTree = "<group>"; };
+		54B16D5B2A1370D300863187 /* SceneContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneContainer.swift; sourceTree = "<group>"; };
+		54B16D652A137A0E00863187 /* TestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHandler.swift; sourceTree = "<group>"; };
+		54B16D672A137D7C00863187 /* PinTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinTestStore.swift; sourceTree = "<group>"; };
+		54B16D692A137EF300863187 /* IntersectTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntersectTestStore.swift; sourceTree = "<group>"; };
+		54B16D6B2A1383C200863187 /* PolygonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonData.swift; sourceTree = "<group>"; };
+		54B16D6D2A141B5500863187 /* iConvex */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = iConvex; path = ../iConvex; sourceTree = "<group>"; };
+		54D57CA82A14D11C00D33409 /* PinDot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinDot.swift; sourceTree = "<group>"; };
+		54E0E1C92A1629E000A329D3 /* AreaScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaScene.swift; sourceTree = "<group>"; };
+		54E0E1CB2A1629EF00A329D3 /* AreaSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaSceneView.swift; sourceTree = "<group>"; };
+		54E0E1CD2A162B6B00A329D3 /* AreaTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaTestStore.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5424DC282A13619F00B5A816 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54D57CA72A14C9E900D33409 /* iConvex in Frameworks */,
+				54B16D5F2A13757500863187 /* iDebug in Frameworks */,
+				54B16D612A13757500863187 /* iFixFloat in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5424DC222A13619F00B5A816 = {
+			isa = PBXGroup;
+			children = (
+				54B16D492A136E2D00863187 /* Packages */,
+				5424DC2D2A13619F00B5A816 /* PolygonDebugApp */,
+				5424DC2C2A13619F00B5A816 /* Products */,
+				54B16D5D2A13757500863187 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5424DC2C2A13619F00B5A816 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5424DC2B2A13619F00B5A816 /* PolygonDebugApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5424DC2D2A13619F00B5A816 /* PolygonDebugApp */ = {
+			isa = PBXGroup;
+			children = (
+				54B16D642A1376F800863187 /* Test */,
+				54B16D4F2A136F5A00863187 /* Content */,
+				5424DC2E2A13619F00B5A816 /* PolygonDebugAppApp.swift */,
+				5424DC322A1361A100B5A816 /* Assets.xcassets */,
+				5424DC342A1361A100B5A816 /* PolygonDebugApp.entitlements */,
+				5424DC352A1361A100B5A816 /* Preview Content */,
+			);
+			path = PolygonDebugApp;
+			sourceTree = "<group>";
+		};
+		5424DC352A1361A100B5A816 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5424DC362A1361A100B5A816 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		54B16D492A136E2D00863187 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				54B16D4A2A136E2D00863187 /* iFixFloat */,
+				54B16D4B2A136E3700863187 /* iDebug */,
+				54B16D6D2A141B5500863187 /* iConvex */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		54B16D4F2A136F5A00863187 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				54B16D502A136F7100863187 /* Scene */,
+				5424DC302A13619F00B5A816 /* ContentView.swift */,
+				54B16D4D2A136F5600863187 /* ContentViewModel.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		54B16D502A136F7100863187 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				54E0E1C82A1629CA00A329D3 /* Area */,
+				54B16D522A136F7F00863187 /* Intersect */,
+				54B16D512A136F7800863187 /* Pin */,
+				54B16D5B2A1370D300863187 /* SceneContainer.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		54B16D512A136F7800863187 /* Pin */ = {
+			isa = PBXGroup;
+			children = (
+				54B16D532A136F9200863187 /* PinScene.swift */,
+				54B16D552A136F9E00863187 /* PinSceneView.swift */,
+				54B16D672A137D7C00863187 /* PinTestStore.swift */,
+				54D57CA82A14D11C00D33409 /* PinDot.swift */,
+			);
+			path = Pin;
+			sourceTree = "<group>";
+		};
+		54B16D522A136F7F00863187 /* Intersect */ = {
+			isa = PBXGroup;
+			children = (
+				54B16D572A136FAD00863187 /* IntersectScene.swift */,
+				54B16D592A136FB700863187 /* IntersectSceneView.swift */,
+				54B16D692A137EF300863187 /* IntersectTestStore.swift */,
+			);
+			path = Intersect;
+			sourceTree = "<group>";
+		};
+		54B16D5D2A13757500863187 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		54B16D642A1376F800863187 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				54B16D652A137A0E00863187 /* TestHandler.swift */,
+				54B16D6B2A1383C200863187 /* PolygonData.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		54E0E1C82A1629CA00A329D3 /* Area */ = {
+			isa = PBXGroup;
+			children = (
+				54E0E1C92A1629E000A329D3 /* AreaScene.swift */,
+				54E0E1CB2A1629EF00A329D3 /* AreaSceneView.swift */,
+				54E0E1CD2A162B6B00A329D3 /* AreaTestStore.swift */,
+			);
+			path = Area;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5424DC2A2A13619F00B5A816 /* PolygonDebugApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5424DC3A2A1361A100B5A816 /* Build configuration list for PBXNativeTarget "PolygonDebugApp" */;
+			buildPhases = (
+				5424DC272A13619F00B5A816 /* Sources */,
+				5424DC282A13619F00B5A816 /* Frameworks */,
+				5424DC292A13619F00B5A816 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PolygonDebugApp;
+			packageProductDependencies = (
+				54B16D5E2A13757500863187 /* iDebug */,
+				54B16D602A13757500863187 /* iFixFloat */,
+				54D57CA62A14C9E900D33409 /* iConvex */,
+			);
+			productName = PolygonDebugApp;
+			productReference = 5424DC2B2A13619F00B5A816 /* PolygonDebugApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5424DC232A13619F00B5A816 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					5424DC2A2A13619F00B5A816 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = 5424DC262A13619F00B5A816 /* Build configuration list for PBXProject "PolygonDebugApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5424DC222A13619F00B5A816;
+			productRefGroup = 5424DC2C2A13619F00B5A816 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5424DC2A2A13619F00B5A816 /* PolygonDebugApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5424DC292A13619F00B5A816 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5424DC372A1361A100B5A816 /* Preview Assets.xcassets in Resources */,
+				5424DC332A1361A100B5A816 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5424DC272A13619F00B5A816 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54E0E1CC2A1629EF00A329D3 /* AreaSceneView.swift in Sources */,
+				54B16D5C2A1370D300863187 /* SceneContainer.swift in Sources */,
+				54B16D682A137D7C00863187 /* PinTestStore.swift in Sources */,
+				54B16D582A136FAD00863187 /* IntersectScene.swift in Sources */,
+				54E0E1CE2A162B6B00A329D3 /* AreaTestStore.swift in Sources */,
+				54B16D6A2A137EF300863187 /* IntersectTestStore.swift in Sources */,
+				54B16D662A137A0E00863187 /* TestHandler.swift in Sources */,
+				5424DC312A13619F00B5A816 /* ContentView.swift in Sources */,
+				54B16D5A2A136FB700863187 /* IntersectSceneView.swift in Sources */,
+				5424DC2F2A13619F00B5A816 /* PolygonDebugAppApp.swift in Sources */,
+				54D57CA92A14D11C00D33409 /* PinDot.swift in Sources */,
+				54B16D562A136F9E00863187 /* PinSceneView.swift in Sources */,
+				54B16D542A136F9200863187 /* PinScene.swift in Sources */,
+				54B16D6C2A1383C200863187 /* PolygonData.swift in Sources */,
+				54B16D4E2A136F5600863187 /* ContentViewModel.swift in Sources */,
+				54E0E1CA2A1629E000A329D3 /* AreaScene.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5424DC382A1361A100B5A816 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5424DC392A1361A100B5A816 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		5424DC3B2A1361A100B5A816 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PolygonDebugApp/PolygonDebugApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PolygonDebugApp/Preview Content\"";
+				DEVELOPMENT_TEAM = HPV9E52JPX;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nail.PolygonDebugApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5424DC3C2A1361A100B5A816 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PolygonDebugApp/PolygonDebugApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PolygonDebugApp/Preview Content\"";
+				DEVELOPMENT_TEAM = HPV9E52JPX;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nail.PolygonDebugApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5424DC262A13619F00B5A816 /* Build configuration list for PBXProject "PolygonDebugApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5424DC382A1361A100B5A816 /* Debug */,
+				5424DC392A1361A100B5A816 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5424DC3A2A1361A100B5A816 /* Build configuration list for PBXNativeTarget "PolygonDebugApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5424DC3B2A1361A100B5A816 /* Debug */,
+				5424DC3C2A1361A100B5A816 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		54B16D5E2A13757500863187 /* iDebug */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = iDebug;
+		};
+		54B16D602A13757500863187 /* iFixFloat */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = iFixFloat;
+		};
+		54D57CA62A14C9E900D33409 /* iConvex */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = iConvex;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 5424DC232A13619F00B5A816 /* Project object */;
+}
