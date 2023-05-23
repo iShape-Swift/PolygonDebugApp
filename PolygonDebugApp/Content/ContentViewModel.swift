@@ -12,13 +12,14 @@ final class ContentViewModel: ObservableObject {
 
     private let areaScene = AreaScene(id: 0)
     private let pinScene = PinScene(id: 1)
-    private let intersectScene = IntersectScene(id: 2)
+    private let pinAreaScene = PinAreaScene(id: 2)
+    private let intersectScene = IntersectScene(id: 3)
     private var testStore: TestStore?
 
     private (set) var pIndex = PersistInt(key: "TestIndex", nilValue: 0)
     
     lazy var scenes: [SceneHandler] = [
-        areaScene.handler, pinScene.handler, intersectScene.handler
+        areaScene.handler, pinScene.handler, pinAreaScene.handler, intersectScene.handler
     ]
 
     @Published
@@ -45,6 +46,8 @@ final class ContentViewModel: ObservableObject {
             areaScene.makeView()
         case 1:
             pinScene.makeView()
+        case 2:
+            pinAreaScene.makeView()
         default:
             intersectScene.makeView()
         }
@@ -69,6 +72,8 @@ final class ContentViewModel: ObservableObject {
         case 1:
             testStore = pinScene.testStore
         case 2:
+            testStore = pinAreaScene.testStore
+        case 3:
             testStore = intersectScene.testStore
         default:
             break

@@ -12,8 +12,8 @@
 		5424DC332A1361A100B5A816 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5424DC322A1361A100B5A816 /* Assets.xcassets */; };
 		5424DC372A1361A100B5A816 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5424DC362A1361A100B5A816 /* Preview Assets.xcassets */; };
 		54B16D4E2A136F5600863187 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B16D4D2A136F5600863187 /* ContentViewModel.swift */; };
-		54B16D542A136F9200863187 /* PinScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B16D532A136F9200863187 /* PinScene.swift */; };
-		54B16D562A136F9E00863187 /* PinSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B16D552A136F9E00863187 /* PinSceneView.swift */; };
+		54B16D542A136F9200863187 /* PinAreaScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B16D532A136F9200863187 /* PinAreaScene.swift */; };
+		54B16D562A136F9E00863187 /* PinAreaSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B16D552A136F9E00863187 /* PinAreaSceneView.swift */; };
 		54B16D582A136FAD00863187 /* IntersectScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B16D572A136FAD00863187 /* IntersectScene.swift */; };
 		54B16D5A2A136FB700863187 /* IntersectSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B16D592A136FB700863187 /* IntersectSceneView.swift */; };
 		54B16D5C2A1370D300863187 /* SceneContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B16D5B2A1370D300863187 /* SceneContainer.swift */; };
@@ -21,13 +21,15 @@
 		54B16D612A13757500863187 /* iFixFloat in Frameworks */ = {isa = PBXBuildFile; productRef = 54B16D602A13757500863187 /* iFixFloat */; };
 		54B16D662A137A0E00863187 /* TestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B16D652A137A0E00863187 /* TestHandler.swift */; };
 		54B16D682A137D7C00863187 /* PinTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B16D672A137D7C00863187 /* PinTestStore.swift */; };
-		54B16D6A2A137EF300863187 /* IntersectTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B16D692A137EF300863187 /* IntersectTestStore.swift */; };
 		54B16D6C2A1383C200863187 /* PolygonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B16D6B2A1383C200863187 /* PolygonData.swift */; };
 		54D57CA72A14C9E900D33409 /* iConvex in Frameworks */ = {isa = PBXBuildFile; productRef = 54D57CA62A14C9E900D33409 /* iConvex */; };
 		54D57CA92A14D11C00D33409 /* PinDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D57CA82A14D11C00D33409 /* PinDot.swift */; };
 		54E0E1CA2A1629E000A329D3 /* AreaScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E0E1C92A1629E000A329D3 /* AreaScene.swift */; };
 		54E0E1CC2A1629EF00A329D3 /* AreaSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E0E1CB2A1629EF00A329D3 /* AreaSceneView.swift */; };
 		54E0E1CE2A162B6B00A329D3 /* AreaTestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E0E1CD2A162B6B00A329D3 /* AreaTestStore.swift */; };
+		54F611512A18D0D900E6A18B /* PinScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F611502A18D0D900E6A18B /* PinScene.swift */; };
+		54F611532A18D0E800E6A18B /* PinSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F611522A18D0E800E6A18B /* PinSceneView.swift */; };
+		54F611552A18F10400E6A18B /* PinVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F611542A18F10400E6A18B /* PinVector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,20 +42,22 @@
 		54B16D4A2A136E2D00863187 /* iFixFloat */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = iFixFloat; path = ../iFixFloat; sourceTree = "<group>"; };
 		54B16D4B2A136E3700863187 /* iDebug */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = iDebug; path = ../iDebug; sourceTree = "<group>"; };
 		54B16D4D2A136F5600863187 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
-		54B16D532A136F9200863187 /* PinScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinScene.swift; sourceTree = "<group>"; };
-		54B16D552A136F9E00863187 /* PinSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinSceneView.swift; sourceTree = "<group>"; };
+		54B16D532A136F9200863187 /* PinAreaScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinAreaScene.swift; sourceTree = "<group>"; };
+		54B16D552A136F9E00863187 /* PinAreaSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinAreaSceneView.swift; sourceTree = "<group>"; };
 		54B16D572A136FAD00863187 /* IntersectScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntersectScene.swift; sourceTree = "<group>"; };
 		54B16D592A136FB700863187 /* IntersectSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntersectSceneView.swift; sourceTree = "<group>"; };
 		54B16D5B2A1370D300863187 /* SceneContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneContainer.swift; sourceTree = "<group>"; };
 		54B16D652A137A0E00863187 /* TestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHandler.swift; sourceTree = "<group>"; };
 		54B16D672A137D7C00863187 /* PinTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinTestStore.swift; sourceTree = "<group>"; };
-		54B16D692A137EF300863187 /* IntersectTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntersectTestStore.swift; sourceTree = "<group>"; };
 		54B16D6B2A1383C200863187 /* PolygonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonData.swift; sourceTree = "<group>"; };
 		54B16D6D2A141B5500863187 /* iConvex */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = iConvex; path = ../iConvex; sourceTree = "<group>"; };
 		54D57CA82A14D11C00D33409 /* PinDot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinDot.swift; sourceTree = "<group>"; };
 		54E0E1C92A1629E000A329D3 /* AreaScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaScene.swift; sourceTree = "<group>"; };
 		54E0E1CB2A1629EF00A329D3 /* AreaSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaSceneView.swift; sourceTree = "<group>"; };
 		54E0E1CD2A162B6B00A329D3 /* AreaTestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaTestStore.swift; sourceTree = "<group>"; };
+		54F611502A18D0D900E6A18B /* PinScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinScene.swift; sourceTree = "<group>"; };
+		54F611522A18D0E800E6A18B /* PinSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinSceneView.swift; sourceTree = "<group>"; };
+		54F611542A18F10400E6A18B /* PinVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinVector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,22 +137,23 @@
 			isa = PBXGroup;
 			children = (
 				54E0E1C82A1629CA00A329D3 /* Area */,
+				54F6114F2A18D0C100E6A18B /* Pin */,
+				54B16D512A136F7800863187 /* PinArea */,
 				54B16D522A136F7F00863187 /* Intersect */,
-				54B16D512A136F7800863187 /* Pin */,
 				54B16D5B2A1370D300863187 /* SceneContainer.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
 		};
-		54B16D512A136F7800863187 /* Pin */ = {
+		54B16D512A136F7800863187 /* PinArea */ = {
 			isa = PBXGroup;
 			children = (
-				54B16D532A136F9200863187 /* PinScene.swift */,
-				54B16D552A136F9E00863187 /* PinSceneView.swift */,
+				54B16D532A136F9200863187 /* PinAreaScene.swift */,
+				54B16D552A136F9E00863187 /* PinAreaSceneView.swift */,
 				54B16D672A137D7C00863187 /* PinTestStore.swift */,
 				54D57CA82A14D11C00D33409 /* PinDot.swift */,
 			);
-			path = Pin;
+			path = PinArea;
 			sourceTree = "<group>";
 		};
 		54B16D522A136F7F00863187 /* Intersect */ = {
@@ -156,7 +161,6 @@
 			children = (
 				54B16D572A136FAD00863187 /* IntersectScene.swift */,
 				54B16D592A136FB700863187 /* IntersectSceneView.swift */,
-				54B16D692A137EF300863187 /* IntersectTestStore.swift */,
 			);
 			path = Intersect;
 			sourceTree = "<group>";
@@ -185,6 +189,16 @@
 				54E0E1CD2A162B6B00A329D3 /* AreaTestStore.swift */,
 			);
 			path = Area;
+			sourceTree = "<group>";
+		};
+		54F6114F2A18D0C100E6A18B /* Pin */ = {
+			isa = PBXGroup;
+			children = (
+				54F611502A18D0D900E6A18B /* PinScene.swift */,
+				54F611522A18D0E800E6A18B /* PinSceneView.swift */,
+				54F611542A18F10400E6A18B /* PinVector.swift */,
+			);
+			path = Pin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,14 +281,16 @@
 				54B16D682A137D7C00863187 /* PinTestStore.swift in Sources */,
 				54B16D582A136FAD00863187 /* IntersectScene.swift in Sources */,
 				54E0E1CE2A162B6B00A329D3 /* AreaTestStore.swift in Sources */,
-				54B16D6A2A137EF300863187 /* IntersectTestStore.swift in Sources */,
+				54F611532A18D0E800E6A18B /* PinSceneView.swift in Sources */,
+				54F611512A18D0D900E6A18B /* PinScene.swift in Sources */,
 				54B16D662A137A0E00863187 /* TestHandler.swift in Sources */,
 				5424DC312A13619F00B5A816 /* ContentView.swift in Sources */,
 				54B16D5A2A136FB700863187 /* IntersectSceneView.swift in Sources */,
 				5424DC2F2A13619F00B5A816 /* PolygonDebugAppApp.swift in Sources */,
 				54D57CA92A14D11C00D33409 /* PinDot.swift in Sources */,
-				54B16D562A136F9E00863187 /* PinSceneView.swift in Sources */,
-				54B16D542A136F9200863187 /* PinScene.swift in Sources */,
+				54B16D562A136F9E00863187 /* PinAreaSceneView.swift in Sources */,
+				54F611552A18F10400E6A18B /* PinVector.swift in Sources */,
+				54B16D542A136F9200863187 /* PinAreaScene.swift in Sources */,
 				54B16D6C2A1383C200863187 /* PolygonData.swift in Sources */,
 				54B16D4E2A136F5600863187 /* ContentViewModel.swift in Sources */,
 				54E0E1CA2A1629E000A329D3 /* AreaScene.swift in Sources */,

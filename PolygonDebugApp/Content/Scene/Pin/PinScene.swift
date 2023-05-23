@@ -2,7 +2,7 @@
 //  PinScene.swift
 //  PolygonDebugApp
 //
-//  Created by Nail Sharipov on 16.05.2023.
+//  Created by Nail Sharipov on 20.05.2023.
 //
 
 import SwiftUI
@@ -10,19 +10,9 @@ import iDebug
 import iConvex
 import iFixFloat
 
-struct Section: Identifiable {
-    
-    let id: Int
-    let color: Color
-    let pathA: [CGPoint]
-    let pathB: [CGPoint]
-}
-
-
-
 final class PinScene: ObservableObject, SceneContainer {
 
-    static let colorA: Color = .green
+    static let colorA: Color = .red
     static let colorB: Color = .blue
     
     let id: Int
@@ -31,9 +21,7 @@ final class PinScene: ObservableObject, SceneContainer {
     var testStore: TestStore { pinTestStore }
     let editorA = ContourEditor(showIndex: true, color: PinScene.colorA)
     let editorB = ContourEditor(showIndex: true, color: PinScene.colorB)
-    
-    var dots: [PinDot] = []
-    var sections: [Section] = []
+    private (set) var pins = [PinVector]()
     
     private var matrix: Matrix = .empty
     
@@ -100,6 +88,7 @@ final class PinScene: ObservableObject, SceneContainer {
 
         guard !pA.isEmpty && !pB.isEmpty else { return }
         
+        pins.removeAll()
         
         let ctA = pA.isConvex
         let ctB = pB.isConvex
@@ -109,32 +98,76 @@ final class PinScene: ObservableObject, SceneContainer {
         
         guard ctA == .convex && ctB == .convex else { return }
         
-        let pins = CrossSolver.intersect(a: pA, b: pB).pins
+        let ps = OverlaySolver.find(polyA: pA, polyB: pB)
         
-        dots.removeAll()
-        for i in 0..<pins.count {
-            let d = pins[i].dot
-            let center = matrix.screen(worldPoint: d.p.point)
-            dots.append(.init(id: i, center: center, color: .red, title: "Pin \(i)"))
+        let scrA = matrix.screen(worldPoints: editorA.points)
+        
+        var i = 0
+        for p in ps {
+            let a: CGPoint
+            let b: CGPoint
+            let c = matrix.screen(worldPoint: p.p.point)
+            if p.mA.offset != 0 {
+                a = scrA[p.mA.index]
+                b = scrA[(p.mA.index + 1) % scrA.count]
+            } else {
+                a = scrA[(p.mA.index - 1 + scrA.count) % scrA.count]
+                b = scrA[(p.mA.index + 1) % scrA.count]
+            }
+            let n = (b - a).normalize
+
+            let title: String?
+            let arrowColor: Color
+            let tailColor: Color
+            
+            switch p.type {
+            case .empty:
+                title = "em a0: \(p.a0), a1: \(p.a1)"
+                tailColor = .gray
+                arrowColor = .gray
+            case .into:
+                title = "in a0: \(p.a0), a1: \(p.a1)"
+                tailColor = .red
+                arrowColor = .red
+            case .out:
+                title = "out a0: \(p.a0), a1: \(p.a1)"
+                tailColor = .blue
+                arrowColor = .blue
+            case .into_empty:
+                title = "in_em a0: \(p.a0), a1: \(p.a1)"
+                tailColor = .red
+                arrowColor = .gray
+            case .empty_into:
+                title = "em_in a0: \(p.a0), a1: \(p.a1)"
+                tailColor = .gray
+                arrowColor = .red
+            case .out_empty:
+                title = "out_em a0: \(p.a0), a1: \(p.a1)"
+                tailColor = .blue
+                arrowColor = .gray
+            case .empty_out:
+                title = "em_out a0: \(p.a0), a1: \(p.a1)"
+                tailColor = .gray
+                arrowColor = .blue
+            case .into_out:
+                title = "into_out a0: \(p.a0), a1: \(p.a1)"
+                tailColor = .red
+                arrowColor = .blue
+            case .out_into:
+                title = "out_into a0: \(p.a0), a1: \(p.a1)"
+                tailColor = .blue
+                arrowColor = .red
+                
+            }
+            
+            let arrow = Arrow(id: i, start: c - 6 * n, end: c + 6 * n, arrowColor: arrowColor, tailColor: tailColor, lineWidth: 4)
+
+            let offset: CGPoint = i % 2 == 0 ? CGPoint(x: 16, y: 12) : CGPoint(x: -16, y: -12)
+            
+            pins.append(PinVector(arrow: arrow, title: title, titlePos: c + offset))
+            i += 1
         }
-        
-        
-        let secs = IntersectSolver.debugIntersect(a: pA, b: pB)
-        
-        self.sections.removeAll()
-        
-        for i in 0..<secs.count {
-            let sec = secs[i]
-            let aPath = sec.a.map({ $0.point })
-            let bPath = sec.b.map({ $0.point })
-            let color = Color(index: i)
-            sections.append(.init(
-                id: i,
-                color: color,
-                pathA: matrix.screen(worldPoints: aPath),
-                pathB: matrix.screen(worldPoints: bPath)
-            ))
-        }
+
         
         self.objectWillChange.send()
     }

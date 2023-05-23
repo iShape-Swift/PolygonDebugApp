@@ -1,5 +1,5 @@
 //
-//  IntersectScene.swift
+//  PinScene.swift
 //  PolygonDebugApp
 //
 //  Created by Nail Sharipov on 16.05.2023.
@@ -10,19 +10,32 @@ import iDebug
 import iConvex
 import iFixFloat
 
-final class IntersectScene: ObservableObject, SceneContainer {
+struct Section: Identifiable {
+    
+    let id: Int
+    let color: Color
+    let areaColor: Color
+    let areaCenter: CGPoint
+    let areaValue: String
+    let pathA: [CGPoint]
+    let pathB: [CGPoint]
+    let area: [CGPoint]
+}
+
+final class PinAreaScene: ObservableObject, SceneContainer {
 
     static let colorA: Color = .red
     static let colorB: Color = .blue
     
     let id: Int
-    let title = "IntersectScene"
+    let title = "PinArea"
     let pinTestStore = PinTestStore()
     var testStore: TestStore { pinTestStore }
-    let editorA = ContourEditor(showIndex: true, color: PinScene.colorA)
-    let editorB = ContourEditor(showIndex: true, color: PinScene.colorB)
-    private (set) var overlay = [CGPoint]()
-    private (set) var center = CGPoint.zero
+    let editorA = ContourEditor(showIndex: true, color: PinAreaScene.colorA)
+    let editorB = ContourEditor(showIndex: true, color: PinAreaScene.colorB)
+    
+    var dots: [PinDot] = []
+    var sections: [Section] = []
     
     private var matrix: Matrix = .empty
     
@@ -47,8 +60,8 @@ final class IntersectScene: ObservableObject, SceneContainer {
         }
     }
     
-    func makeView() -> IntersectSceneView {
-        IntersectSceneView(scene: self)
+    func makeView() -> PinAreaSceneView {
+        PinAreaSceneView(scene: self)
     }
 
     func editorAView() -> ContourEditorView {
@@ -89,19 +102,60 @@ final class IntersectScene: ObservableObject, SceneContainer {
 
         guard !pA.isEmpty && !pB.isEmpty else { return }
         
+        
         let ctA = pA.isConvex
         let ctB = pB.isConvex
 
-        editorA.set(stroke: 1, color: color(convexTest: ctA, main: PinScene.colorA))
-        editorB.set(stroke: 1, color: color(convexTest: ctB, main: PinScene.colorB))
+        editorA.set(stroke: 1, color: color(convexTest: ctA, main: PinAreaScene.colorA))
+        editorB.set(stroke: 1, color: color(convexTest: ctB, main: PinAreaScene.colorB))
         
         guard ctA == .convex && ctB == .convex else { return }
-
-        let polygon = OverlaySolver.debugIntersect(polyA: pA, polyB: pB)
         
-        self.overlay = matrix.screen(worldPoints: polygon.path.map({ $0.point }))
-        self.center = matrix.screen(worldPoint: polygon.centroid.center.point) - CGPoint(x: 4, y: 4)
+        let pins = CrossSolver.intersect(polyA: pA, polyB: pB)
+        
+        dots.removeAll()
+        for i in 0..<pins.count {
+            let pin = pins[i]
+            let center = matrix.screen(worldPoint: pin.p.point)
+            dots.append(.init(id: i, center: center, color: .red, title: "Pin \(i)"))
+        }
+        
+        let secs = OverlaySolver.debugIntersect(a: pA, b: pB)
+        
+        self.sections.removeAll()
+        
+        for i in 0..<secs.count {
+            let sec = secs[i]
+            
+            if sec.area == 0 {
+                continue
+            }
+            
+            let areaColor: Color = sec.area > 0 ? .red.opacity(0.4) : .blue.opacity(0.4)
+            
+            let aPath = sec.a.map({ $0.point })
+            let bPath = sec.b.map({ $0.point })
+            
+            var area: [CGPoint] = aPath
+            area.removeFirst()
+            area.removeLast()
+            
+            area.append(contentsOf: bPath.reversed())
+            
+            let areaCenter = area.reduce(CGPoint.zero, { $0 + $1 }) / CGFloat(area.count)
 
+            let color = Color(index: i)
+            sections.append(.init(
+                id: i,
+                color: color,
+                areaColor: areaColor,
+                areaCenter: matrix.screen(worldPoint: areaCenter),
+                areaValue: String(sec.area),
+                pathA: matrix.screen(worldPoints: aPath),
+                pathB: matrix.screen(worldPoints: bPath),
+                area: matrix.screen(worldPoints: area)
+            ))
+        }
         
         self.objectWillChange.send()
     }

@@ -2,7 +2,7 @@
 //  PinSceneView.swift
 //  PolygonDebugApp
 //
-//  Created by Nail Sharipov on 16.05.2023.
+//  Created by Nail Sharipov on 20.05.2023.
 //
 
 import SwiftUI
@@ -39,20 +39,9 @@ struct PinSceneView: View {
             }
             scene.editorAView()
             scene.editorBView()
-            ForEach(scene.dots) { dot in
-                PinDotView(dot: dot)
+            ForEach(scene.pins) { pin in
+                PinVectorView(pin: pin)
             }
-            ForEach(scene.sections) { sec in
-                Path { path in
-                    path.addLines(sec.pathA)
-                }.stroke(style: .init(lineWidth: 3, lineCap: .round, lineJoin: .round))
-                    .foregroundColor(sec.color)
-                Path { path in
-                    path.addLines(sec.pathB)
-                }.stroke(style: .init(lineWidth: 3, lineCap: .round, lineJoin: .round))
-                    .foregroundColor(sec.color)
-            }
-            
         }.onAppear() {
             scene.onAppear()
         }

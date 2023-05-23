@@ -118,15 +118,99 @@ final class PinTestStore: TestStore {
             pB: PolygonData(
                 isConvex: true,
                 points: [
-                    CGPoint(x: -10.0, y: 10.0),
-                    CGPoint(x: -20.0, y: 20.0),
-                    CGPoint(x: 5.0, y: 20.0),
-                    CGPoint(x: 5.0, y: 10.0)
+                    CGPoint(x:  0.0, y:-15.0),
+                    CGPoint(x:-15.0, y:  0.0),
+                    CGPoint(x:  0.0, y: 15.0),
+                    CGPoint(x: 15.0, y:   0.0)
                 ]
             )
         ),
         .init(
             name: "Two Rect 5",
+            pA: PolygonData(
+                isConvex: true,
+                points: [
+                    CGPoint(x:  0.0, y:-15.0),
+                    CGPoint(x:-15.0, y:  0.0),
+                    CGPoint(x:  0.0, y: 15.0),
+                    CGPoint(x: 15.0, y:   0.0)
+                ]
+            ),
+            pB: PolygonData(
+                isConvex: true,
+                points: [
+                    CGPoint(x: -10.0, y: -10.0),
+                    CGPoint(x: -10.0, y: 10.0),
+                    CGPoint(x: 10.0, y: 10.0),
+                    CGPoint(x: 10.0, y: -10.0)
+                ]
+            )
+        ),
+        .init(
+            name: "Two Rect 6",
+            pA: PolygonData(
+                isConvex: true,
+                points: [
+                    CGPoint(x: -10.0, y: -10.0),
+                    CGPoint(x: -10.0, y: 10.0),
+                    CGPoint(x: 10.0, y: 10.0),
+                    CGPoint(x: 10.0, y: -10.0)
+                ]
+            ),
+            pB: PolygonData(
+                isConvex: true,
+                points: [
+                    CGPoint(x:  0.0, y:-20.0),
+                    CGPoint(x:-20.0, y:  0.0),
+                    CGPoint(x:  0.0, y: 20.0),
+                    CGPoint(x: 20.0, y:   0.0)
+                ]
+            )
+        ),
+        .init(
+            name: "Two Rect 7",
+            pA: PolygonData(
+                isConvex: true,
+                points: [
+                    CGPoint(x:  0.0, y:-20.0),
+                    CGPoint(x:-20.0, y:  0.0),
+                    CGPoint(x:  0.0, y: 20.0),
+                    CGPoint(x: 20.0, y:   0.0)
+                ]
+            ),
+            pB: PolygonData(
+                isConvex: true,
+                points: [
+                    CGPoint(x: -10.0, y: -10.0),
+                    CGPoint(x: -10.0, y: 10.0),
+                    CGPoint(x: 10.0, y: 10.0),
+                    CGPoint(x: 10.0, y: -10.0)
+                ]
+            )
+        ),
+        .init(
+            name: "Two Rect 8",
+            pA: PolygonData(
+                isConvex: true,
+                points: [
+                    CGPoint(x: -10.0, y: -10.0),
+                    CGPoint(x: -10.0, y: 10.0),
+                    CGPoint(x: 10.0, y: 10.0),
+                    CGPoint(x: 10.0, y: -10.0)
+                ]
+            ),
+            pB: PolygonData(
+                isConvex: true,
+                points: [
+                    CGPoint(x: -20.0, y: -10.0),
+                    CGPoint(x: -20.0, y:   0.0),
+                    CGPoint(x:  10.0, y:   0.0),
+                    CGPoint(x:  10.0, y: -10.0)
+                ]
+            )
+        ),
+        .init(
+            name: "Two Rect 11",
             pA: PolygonData(
                 isConvex: true,
                 points: [
@@ -143,25 +227,6 @@ final class PinTestStore: TestStore {
                     CGPoint(x: -5.0, y: 10.0),
                     CGPoint(x: 5.0, y: 10.0),
                     CGPoint(x: 5.0, y: -20.0)
-                ]
-            )
-        ),
-        .init(
-            name: "Triangles 1",
-            pA: PolygonData(
-                isConvex: true,
-                points: [
-                    CGPoint(x: -10.0, y: 10.0),
-                    CGPoint(x:  10.0, y: 10.0),
-                    CGPoint(x:  10.0, y: -5.0)
-                ]
-            ),
-            pB: PolygonData(
-                isConvex: true,
-                points: [
-                    CGPoint(x: -10.0, y: -10.0),
-                    CGPoint(x:  10.0, y:   5.0),
-                    CGPoint(x:  10.0, y: -10.0)
                 ]
             )
         )
