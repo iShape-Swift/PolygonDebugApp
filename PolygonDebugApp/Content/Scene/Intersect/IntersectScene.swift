@@ -23,6 +23,8 @@ final class IntersectScene: ObservableObject, SceneContainer {
     let editorB = ContourEditor(showIndex: true, color: PinScene.colorB)
     private (set) var overlay = [CGPoint]()
     private (set) var center = CGPoint.zero
+    private (set) var areaPos = CGPoint.zero
+    private (set) var area: String = ""
     
     private var matrix: Matrix = .empty
     
@@ -101,7 +103,8 @@ final class IntersectScene: ObservableObject, SceneContainer {
         
         self.overlay = matrix.screen(worldPoints: polygon.path.map({ $0.point }))
         self.center = matrix.screen(worldPoint: polygon.centroid.center.point) - CGPoint(x: 4, y: 4)
-
+        self.area = "\(polygon.centroid.area.normalize)"
+        self.areaPos = center + CGPoint(x: 0, y: 16)
         
         self.objectWillChange.send()
     }

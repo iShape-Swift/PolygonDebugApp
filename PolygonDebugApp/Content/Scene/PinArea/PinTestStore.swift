@@ -202,6 +202,27 @@ final class PinTestStore: TestStore {
             pB: PolygonData(
                 isConvex: true,
                 points: [
+                    CGPoint(x: -10.0, y: -10.0),
+                    CGPoint(x: -10.0, y: 10.0),
+                    CGPoint(x: 10.0, y: 10.0),
+                    CGPoint(x: 10.0, y: -10.0)
+                ]
+            )
+        ),
+        .init(
+            name: "Two Rect 9",
+            pA: PolygonData(
+                isConvex: true,
+                points: [
+                    CGPoint(x: -10.0, y: -10.0),
+                    CGPoint(x: -10.0, y: 10.0),
+                    CGPoint(x: 10.0, y: 10.0),
+                    CGPoint(x: 10.0, y: -10.0)
+                ]
+            ),
+            pB: PolygonData(
+                isConvex: true,
+                points: [
                     CGPoint(x: -20.0, y: -10.0),
                     CGPoint(x: -20.0, y:   0.0),
                     CGPoint(x:  10.0, y:   0.0),

@@ -45,6 +45,11 @@ struct IntersectSceneView: View {
                 .size(width: 8, height: 8)
                 .offset(scene.center)
                 .foregroundColor(.purple)
+            Text(scene.area)
+                .position(scene.areaPos)
+                .font(.title2)
+                .foregroundColor(.black)
+            
             scene.editorAView()
             scene.editorBView()
         }.onAppear() {
