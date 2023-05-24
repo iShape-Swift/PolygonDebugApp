@@ -98,7 +98,7 @@ final class PinScene: ObservableObject, SceneContainer {
         
         guard ctA == .convex && ctB == .convex else { return }
         
-        let ps = OverlaySolver.find(polyA: pA, polyB: pB)
+        let ps = OverlaySolver.find(polyA: pA, polyB: pB, bndA: Boundary(points: pA), bndB: Boundary(points: pB))
         
         let scrA = matrix.screen(worldPoints: editorA.points)
         
