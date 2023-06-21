@@ -1,19 +1,19 @@
 //
-//  PinSceneView.swift
+//  DegenerateSceneView.swift
 //  PolygonDebugApp
 //
-//  Created by Nail Sharipov on 20.05.2023.
+//  Created by Nail Sharipov on 11.06.2023.
 //
 
 import SwiftUI
 
-struct PinSceneView: View {
+struct DegenerateSceneView: View {
  
     @ObservedObject
-    var scene: PinScene
+    var scene: DegenerateScene
     
     var body: some View {
-        return HStack {
+        HStack {
             GeometryReader { proxy in
                 content(size: proxy.size)
             }
@@ -31,16 +31,11 @@ struct PinSceneView: View {
                 Button("Solve") {
                     scene.solve()
                 }.buttonStyle(.borderedProminent).padding()
-                HStack {
-                    Text("Convex A").font(.title2).foregroundColor(PinScene.colorA)
-                    Text("Convex B").font(.title2).foregroundColor(PinScene.colorB)
-                }
                 Spacer()
             }
-            scene.editorAView()
-            scene.editorBView()
-            ForEach(scene.pins) { pin in
-                PinVectorView(pin: pin)
+            scene.editorView()
+            ForEach(scene.verts) { vert in
+                TVertView(vert: vert)
             }
         }.onAppear() {
             scene.onAppear()

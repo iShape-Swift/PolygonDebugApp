@@ -6,6 +6,7 @@
 //
 
 import CoreGraphics
+import iPolygon
 
 struct SimplePolygonTest {
     let name: String
@@ -26,4 +27,17 @@ struct AreaTest {
     let p0: CGPoint
     let p1: CGPoint
     let path: [CGPoint]
+}
+
+struct ShapeTest {
+    let name: String
+    let shape: CGShape
+}
+
+struct FCWTest {
+    let name: String
+    let center: CGPoint
+    let p0: CGPoint
+    let p1: CGPoint
+    let p2: CGPoint
 }

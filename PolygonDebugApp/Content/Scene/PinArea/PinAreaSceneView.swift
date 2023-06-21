@@ -32,8 +32,8 @@ struct PinAreaSceneView: View {
                     scene.solve()
                 }.buttonStyle(.borderedProminent).padding()
                 HStack {
-                    Text("Polygon A").font(.title2).foregroundColor(PinAreaScene.colorA)
-                    Text("Polygon B").font(.title2).foregroundColor(PinAreaScene.colorB)
+                    Text("Convex A").font(.title2).foregroundColor(PinAreaScene.colorA)
+                    Text("Convex B").font(.title2).foregroundColor(PinAreaScene.colorB)
                 }
                 Spacer()
             }

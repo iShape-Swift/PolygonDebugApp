@@ -7,7 +7,7 @@
 
 import SwiftUI
 import iDebug
-import iConvex
+import iPolygon
 import iFixFloat
 
 final class IntersectScene: ObservableObject, SceneContainer {
@@ -99,7 +99,7 @@ final class IntersectScene: ObservableObject, SceneContainer {
         
         guard ctA == .convex && ctB == .convex else { return }
 
-        let polygon = OverlaySolver.debugIntersect(polyA: pA, polyB: pB)
+        let polygon = ConvexOverlaySolver.debugIntersect(polyA: pA, polyB: pB)
         
         self.overlay = matrix.screen(worldPoints: polygon.path.map({ $0.point }))
         self.center = matrix.screen(worldPoint: polygon.centroid.center.point) - CGPoint(x: 4, y: 4)

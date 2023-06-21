@@ -7,7 +7,7 @@
 
 import SwiftUI
 import iDebug
-import iConvex
+import iPolygon
 import iFixFloat
 
 final class PinScene: ObservableObject, SceneContainer {
@@ -98,7 +98,7 @@ final class PinScene: ObservableObject, SceneContainer {
         
         guard ctA == .convex && ctB == .convex else { return }
         
-        let ps = OverlaySolver.find(polyA: pA, polyB: pB, bndA: Boundary(points: pA), bndB: Boundary(points: pB))
+        let ps = ConvexOverlaySolver.find(polyA: pA, polyB: pB, bndA: Boundary(points: pA), bndB: Boundary(points: pB))
         
         let scrA = matrix.screen(worldPoints: editorA.points)
         

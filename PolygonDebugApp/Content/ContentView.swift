@@ -27,7 +27,7 @@ struct ContentView: View {
         } detail: {
             viewModel.sceneView
         }
-        .navigationTitle("Polygon App")
+        .navigationTitle("Convex App")
         .navigationSubtitle("Test")
         .onAppear() {
             viewModel.onAppear()

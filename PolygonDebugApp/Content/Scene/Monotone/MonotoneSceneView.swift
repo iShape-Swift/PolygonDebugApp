@@ -1,16 +1,16 @@
 //
-//  PinSceneView.swift
+//  MonotoneSceneView.swift
 //  PolygonDebugApp
 //
-//  Created by Nail Sharipov on 20.05.2023.
+//  Created by Nail Sharipov on 01.06.2023.
 //
 
 import SwiftUI
 
-struct PinSceneView: View {
+struct MonotoneSceneView: View {
  
     @ObservedObject
-    var scene: PinScene
+    var scene: MonotoneScene
     
     var body: some View {
         return HStack {
@@ -31,16 +31,16 @@ struct PinSceneView: View {
                 Button("Solve") {
                     scene.solve()
                 }.buttonStyle(.borderedProminent).padding()
-                HStack {
-                    Text("Convex A").font(.title2).foregroundColor(PinScene.colorA)
-                    Text("Convex B").font(.title2).foregroundColor(PinScene.colorB)
-                }
                 Spacer()
             }
-            scene.editorAView()
-            scene.editorBView()
-            ForEach(scene.pins) { pin in
-                PinVectorView(pin: pin)
+            ForEach(scene.mPolies) { mPoly in
+                MPolyView(poly: mPoly)
+            }
+            ForEach(scene.editors) { editor in
+                editor.makeView(matrix: scene.matrix)
+            }
+            ForEach(scene.verts) { vert in
+                TVertView(vert: vert)
             }
         }.onAppear() {
             scene.onAppear()

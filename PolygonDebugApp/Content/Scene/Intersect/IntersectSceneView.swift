@@ -32,8 +32,8 @@ struct IntersectSceneView: View {
                     scene.solve()
                 }.buttonStyle(.borderedProminent).padding()
                 HStack {
-                    Text("Polygon A").font(.title2).foregroundColor(PinScene.colorA)
-                    Text("Polygon B").font(.title2).foregroundColor(PinScene.colorB)
+                    Text("Convex A").font(.title2).foregroundColor(PinScene.colorA)
+                    Text("Convex B").font(.title2).foregroundColor(PinScene.colorB)
                 }
                 Spacer()
             }

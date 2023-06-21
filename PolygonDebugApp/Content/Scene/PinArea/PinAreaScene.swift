@@ -7,7 +7,7 @@
 
 import SwiftUI
 import iDebug
-import iConvex
+import iPolygon
 import iFixFloat
 
 struct Section: Identifiable {
@@ -111,7 +111,7 @@ final class PinAreaScene: ObservableObject, SceneContainer {
         
         guard ctA == .convex && ctB == .convex else { return }
         
-        let pins = CrossSolver.intersect(polyA: pA, polyB: pB)
+        let pins = ConvexCrossSolver.intersect(polyA: pA, polyB: pB)
         
         dots.removeAll()
         for i in 0..<pins.count {
@@ -120,18 +120,18 @@ final class PinAreaScene: ObservableObject, SceneContainer {
             dots.append(.init(id: i, center: center, color: .red, title: "Pin \(i)"))
         }
         
-        let secs = OverlaySolver.debugIntersect(a: pA, b: pB)
+        let secs = ConvexOverlaySolver.debugIntersect(a: pA, b: pB)
         
         self.sections.removeAll()
         
         for i in 0..<secs.count {
             let sec = secs[i]
             
-            if sec.area == 0 {
+            if sec.unsafeArea == 0 {
                 continue
             }
             
-            let areaColor: Color = sec.area > 0 ? .red.opacity(0.4) : .blue.opacity(0.4)
+            let areaColor: Color = sec.unsafeArea > 0 ? .red.opacity(0.4) : .blue.opacity(0.4)
             
             let aPath = sec.a.map({ $0.point })
             let bPath = sec.b.map({ $0.point })
@@ -150,7 +150,7 @@ final class PinAreaScene: ObservableObject, SceneContainer {
                 color: color,
                 areaColor: areaColor,
                 areaCenter: matrix.screen(worldPoint: areaCenter),
-                areaValue: String(sec.area),
+                areaValue: String(sec.unsafeArea),
                 pathA: matrix.screen(worldPoints: aPath),
                 pathB: matrix.screen(worldPoints: bPath),
                 area: matrix.screen(worldPoints: area)

@@ -1,16 +1,16 @@
 //
-//  PinSceneView.swift
+//  DelaunaySceneView.swift
 //  PolygonDebugApp
 //
-//  Created by Nail Sharipov on 20.05.2023.
+//  Created by Nail Sharipov on 08.06.2023.
 //
 
 import SwiftUI
 
-struct PinSceneView: View {
+struct DelaunaySceneView: View {
  
     @ObservedObject
-    var scene: PinScene
+    var scene: DelaunayScene
     
     var body: some View {
         return HStack {
@@ -31,16 +31,14 @@ struct PinSceneView: View {
                 Button("Solve") {
                     scene.solve()
                 }.buttonStyle(.borderedProminent).padding()
-                HStack {
-                    Text("Convex A").font(.title2).foregroundColor(PinScene.colorA)
-                    Text("Convex B").font(.title2).foregroundColor(PinScene.colorB)
-                }
+                Slider(value: $scene.scale, in: 5...100).frame(width: 500).padding(.trailing, 8)
                 Spacer()
             }
-            scene.editorAView()
-            scene.editorBView()
-            ForEach(scene.pins) { pin in
-                PinVectorView(pin: pin)
+            ForEach(scene.triangles) { triangle in
+                MPolyView(poly: triangle)
+            }
+            ForEach(scene.editors) { editor in
+                editor.makeView(matrix: scene.matrix)
             }
         }.onAppear() {
             scene.onAppear()
